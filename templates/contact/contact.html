@@ -1,0 +1,16 @@
+{% extends 'base1.html' %} {% block css %}{% endblock css %} {% block body %} 
+  {% for feed in feeds %}
+          <div class='container-fluid'>
+          <div class="card mt-2">
+          <h5 class="card-header" style="background-color : rgb(105, 3, 3); color : white">{{feed.name}}</h5>
+          <div class="card-body" style="background-color : rgb(215, 238, 197); color : black">
+            <h5 class="card-title">Email :: {{feed.email}}</h5>
+            <h5 class="card-title">Phone :: {{feed.phone}}</h5>
+            <h5 class="card-title">Query :: {{feed.query}}</h5>
+            
+          </div>
+          </div>
+          </div>
+  {% endfor %}
+
+{% endblock body %}
