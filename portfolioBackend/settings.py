@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
 ]
 
 ROOT_URLCONF = 'portfolioBackend.urls'
@@ -131,5 +131,5 @@ STATICFILES_DIRS = [
 MESSAGE_TAGS = {
     messages.INFO: '',
     50: 'critical',
-    messages.ERROR : 'danger',
+    messages.ERROR: 'danger',
 }

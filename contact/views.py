@@ -5,6 +5,8 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import *
 from django.http import HttpResponse, JsonResponse
 import json
+from django.conf import settings 
+from django.core.mail import send_mail 
 # Create your views here.
 
 
@@ -27,6 +29,13 @@ def postquery(request):
             query = data['query']
             contact = Contact(name=name, email=email,phone=phone, query=query)
             contact.save()
+            subject = f'Hi {name}, thank you for contacting Abhinav Anand.'
+            message = 'Just wait for a while. We will connect with you soon. Thankyou for contacting Abhinav. Have a nice day.'
+            email_from = settings.EMAIL_HOST_USER 
+            recipient_list = [email] 
+            send_mail( subject, message, email_from, recipient_list ) 
+
+
             return JsonResponse({'status': 'success'})
         except:
             return JsonResponse({'status': 'error'})
